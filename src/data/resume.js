@@ -1,7 +1,7 @@
 export const resumeData = {
     name: "Zahoor Khan",
     role: "MERN Stack Developer",
-    email: "zahorshinwari5371@gmail.com",
+    email: "zahoorshinwari5371@gmail.com",
     phone: "+923359194083",
     location: "Pakistan",
     education: [
@@ -66,7 +66,7 @@ export const resumeData = {
         "IoT System Development - NV&TTC"
     ],
     socials: {
-        github: "https://github.com",
-        linkedin: "https://linkedin.com"
+        github: "https://github.com/zahoorkhan266",
+        linkedin: "https://www.linkedin.com/in/zakhori-shinwari-373b14391?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     }
 };
