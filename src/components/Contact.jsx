@@ -3,59 +3,90 @@ import { resumeData } from "../data/resume"
 import { Mail, Phone, MapPin, Send, ArrowUpRight } from "lucide-react"
 
 export default function Contact() {
+    const contactInfo = [
+        {
+            label: "Email Me",
+            value: resumeData.email,
+            icon: <Mail size={24} />,
+            href: `mailto:${resumeData.email}`,
+            color: "text-primary-600 dark:text-primary-400"
+        },
+        {
+            label: "Call Me",
+            value: resumeData.phone,
+            icon: <Phone size={24} />,
+            href: `tel:${resumeData.phone}`,
+            color: "text-blue-600 dark:text-blue-400"
+        },
+        {
+            label: "Location",
+            value: resumeData.location,
+            icon: <MapPin size={24} />,
+            href: null,
+            color: "text-slate-600 dark:text-slate-400"
+        },
+    ]
+
     return (
         <section id="contact" className="py-24 md:py-40 bg-white dark:bg-slate-950">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="max-w-xl"
-                    >
-                        <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter leading-tight">
-                            Let's Build <br />
-                            <span className="text-primary-600 dark:text-primary-400">Something Great</span>
-                        </h2>
+                    <div>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="text-6xl md:text-8xl font-black mb-10 tracking-tightest leading-[0.85] font-display"
+                        >
+                            Let's <br />
+                            <span className="text-primary-600 dark:text-primary-400">Connect</span>
+                        </motion.h2>
                         <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 font-medium leading-relaxed">
                             I'm available for full-time roles and high-impact freelance projects.
                             Let's discuss how my expertise can help your vision come to life.
                         </p>
 
-                        <div className="space-y-6">
-                            <a href={`mailto:${resumeData.email}`} className="flex items-center gap-6 group p-6 rounded-[2rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-primary-500/50 transition-all duration-500 shadow-sm">
-                                <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-900 flex items-center justify-center text-primary-600 shadow-sm group-hover:scale-110 transition-transform">
-                                    <Mail size={24} />
-                                </div>
-                                <div className="flex-grow">
-                                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-1">Email Me</p>
-                                    <p className="text-lg font-bold">{resumeData.email}</p>
-                                </div>
-                                <ArrowUpRight className="text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity" size={20} />
-                            </a>
-
-                            <a href={`tel:${resumeData.phone}`} className="flex items-center gap-6 group p-6 rounded-[2rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 hover:border-primary-500/50 transition-all duration-500 shadow-sm">
-                                <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-900 flex items-center justify-center text-blue-600 shadow-sm group-hover:scale-110 transition-transform">
-                                    <Phone size={24} />
-                                </div>
-                                <div className="flex-grow">
-                                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-1">Call Me</p>
-                                    <p className="text-lg font-bold">{resumeData.phone}</p>
-                                </div>
-                                <ArrowUpRight className="text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity" size={20} />
-                            </a>
-
-                            <div className="flex items-center gap-6 p-6 rounded-[2rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
-                                <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-900 flex items-center justify-center text-slate-400">
-                                    <MapPin size={24} />
-                                </div>
-                                <div>
-                                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-1">Location</p>
-                                    <p className="text-lg font-bold">{resumeData.location}</p>
-                                </div>
-                            </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {contactInfo.map((info, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                >
+                                    {info.href ? (
+                                        <a href={info.href} className="block p-10 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/50 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 group">
+                                            <div className="flex items-center gap-6 mb-8">
+                                                <div className={`w-14 h-14 rounded-2xl bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center ${info.color} group-hover:scale-110 transition-transform`}>
+                                                    {info.icon}
+                                                </div>
+                                                <div>
+                                                    <p className="text-[11px] font-black uppercase tracking-widest text-slate-400 mb-1">{info.label}</p>
+                                                    <p className="text-lg font-bold text-slate-900 dark:text-white truncate">{info.value}</p>
+                                                </div>
+                                            </div>
+                                            <div className="flex justify-end">
+                                                <ArrowUpRight className="text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity" size={20} />
+                                            </div>
+                                        </a>
+                                    ) : (
+                                        <div className="p-10 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/50 rounded-[2.5rem] shadow-sm">
+                                            <div className="flex items-center gap-6 mb-8">
+                                                <div className={`w-14 h-14 rounded-2xl bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center ${info.color}`}>
+                                                    {info.icon}
+                                                </div>
+                                                <div>
+                                                    <p className="text-[11px] font-black uppercase tracking-widest text-slate-400 mb-1">{info.label}</p>
+                                                    <p className="text-lg font-bold text-slate-900 dark:text-white truncate">{info.value}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                </motion.div>
+                            ))}
                         </div>
-                    </motion.div>
+                    </div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

@@ -22,15 +22,16 @@ export default function Navbar() {
     if (!mounted) return null
 
     return (
-        <nav className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md">
+        <nav className="fixed top-0 z-50 w-full border-b border-slate-200/50 dark:border-slate-800/50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="flex-shrink-0 font-bold text-xl tracking-tighter"
+                        className="flex-shrink-0 font-display font-black text-2xl tracking-tightest group cursor-pointer"
                     >
-                        ZK
+                        <span className="text-primary-600">Z</span>K
+                        <div className="h-0.5 w-0 group-hover:w-full bg-primary-500 transition-all duration-300" />
                     </motion.div>
 
                     {/* Desktop Nav */}
@@ -42,9 +43,10 @@ export default function Navbar() {
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
-                                className="text-sm font-medium hover:text-primary-500 transition-colors"
+                                className="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors relative group"
                             >
                                 {link.name}
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all group-hover:w-full" />
                             </motion.a>
                         ))}
                         <button

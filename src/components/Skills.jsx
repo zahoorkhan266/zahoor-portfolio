@@ -34,10 +34,10 @@ export default function Skills() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-[0.9]"
+                        className="text-6xl md:text-8xl font-black mb-10 tracking-tightest leading-[0.85] font-display"
                     >
-                        Technical <br />
-                        <span className="text-primary-600 dark:text-primary-400">Toolkit</span>
+                        Tool <br />
+                        <span className="text-primary-600 dark:text-primary-400">Stack</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -58,14 +58,16 @@ export default function Skills() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1, duration: 0.5 }}
-                            className="relative group p-10 rounded-[3rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800/50 hover:border-primary-500/20 transition-all duration-500"
+                            className="group p-8 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/50 rounded-3xl hover:border-primary-500/30 transition-all duration-500 shadow-sm hover:shadow-xl hover:-translate-y-1"
                         >
                             <div className="relative z-10">
                                 <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 flex items-center justify-center mb-10 group-hover:scale-110 transition-all duration-500 shadow-sm">
                                     {category.icon}
                                 </div>
-                                <h3 className="text-xl font-black mb-8 tracking-tight">{category.title}</h3>
-                                <div className="flex flex-wrap gap-2.5">
+                                <h4 className="text-sm font-black uppercase tracking-widest text-slate-400 group-hover:text-primary-500 transition-colors">
+                                    {category.title}
+                                </h4>
+                                <div className="flex flex-wrap gap-2.5 mt-4">
                                     {category.items.map((skill) => (
                                         <span
                                             key={skill}

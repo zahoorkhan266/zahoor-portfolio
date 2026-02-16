@@ -12,7 +12,7 @@ export default function Projects() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-[0.9]"
+                            className="text-6xl md:text-8xl font-black mb-10 tracking-tightest leading-[0.85] font-display"
                         >
                             Selected <br />
                             <span className="text-primary-600 dark:text-primary-400">Projects</span>
@@ -48,7 +48,7 @@ export default function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1, duration: 0.7 }}
-                            className="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/50 rounded-[3rem] overflow-hidden hover:border-primary-500/20 transition-all duration-500 flex flex-col h-full shadow-sm hover:shadow-2xl"
+                            className="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/50 rounded-[2.5rem] overflow-hidden hover:border-primary-500/30 transition-all duration-700 flex flex-col h-full shadow-sm hover:shadow-2xl hover:-translate-y-2"
                         >
                             {/* Visual Header */}
                             <div className="aspect-[16/9] bg-slate-50 dark:bg-slate-800/50 relative overflow-hidden">
@@ -75,21 +75,21 @@ export default function Projects() {
                                         </span>
                                     ))}
                                 </div>
-                                <h3 className="text-3xl font-black mb-4 group-hover:text-primary-600 transition-colors tracking-tight">
+                                <h3 className="text-4xl font-black mb-6 group-hover:text-primary-600 transition-colors tracking-tightest font-display">
                                     {project.title}
                                 </h3>
                                 {project.role && (
-                                    <p className="text-[10px] font-black text-primary-500 mb-6 uppercase tracking-[0.2em]">
+                                    <p className="text-[11px] font-black text-primary-500 mb-8 uppercase tracking-widest">
                                         {project.role}
                                     </p>
                                 )}
-                                <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2 mb-8 flex-grow font-medium">
+                                <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3 mb-10 flex-grow font-medium">
                                     {project.description}
                                 </p>
                                 <div className="flex items-center gap-6 mt-auto">
                                     {project.link && (
-                                        <a href={project.link} className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-primary-600 transition-all translate-x-0 hover:translate-x-1">
-                                            View Demo <ArrowUpRight size={16} />
+                                        <a href={project.link} className="inline-flex items-center gap-3 text-[11px] font-black uppercase tracking-widest text-slate-400 hover:text-primary-600 transition-all translate-x-0 hover:translate-x-2">
+                                            View Demo <ArrowUpRight size={18} />
                                         </a>
                                     )}
                                 </div>

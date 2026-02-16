@@ -6,10 +6,10 @@ import cvFile from "../assets/Zahoor's Resume.pdf"
 export default function Hero() {
     return (
         <section className="relative overflow-hidden pt-32 pb-24 md:pt-48 md:pb-40">
-            {/* Soft background glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
-                <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-primary-500/5 blur-[160px] rounded-full" />
-                <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-blue-500/5 blur-[160px] rounded-full" />
+            {/* Premium background glow */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none scale-150">
+                <div className="absolute top-[-10%] left-[-20%] w-[80%] h-[80%] bg-primary-500/10 blur-[180px] rounded-full mix-blend-soft-light animate-pulse" />
+                <div className="absolute bottom-[-10%] right-[-20%] w-[80%] h-[80%] bg-blue-500/10 blur-[180px] rounded-full mix-blend-soft-light animate-pulse [animation-delay:2s]" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -35,7 +35,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
-                        className="text-7xl md:text-9xl font-black tracking-tighter mb-10 bg-clip-text text-transparent bg-gradient-to-b from-slate-950 to-slate-700 dark:from-white dark:to-slate-400 leading-[0.9]"
+                        className="text-7xl md:text-[10rem] font-black tracking-tightest mb-8 bg-clip-text text-transparent bg-gradient-to-b from-slate-950 to-slate-700 dark:from-white dark:to-slate-500 leading-[0.85] font-display"
                     >
                         {resumeData.name}
                     </motion.h1>
@@ -53,11 +53,11 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.7 }}
-                        className="max-w-2xl mx-auto text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-16 leading-relaxed font-medium"
+                        className="max-w-xl mx-auto text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-16 leading-relaxed font-medium"
                     >
                         I build high-performance web applications with a focus on
-                        <span className="text-slate-900 dark:text-white mx-1">clean code</span>
-                        and <span className="text-slate-900 dark:text-white mx-1">intelligent AI integrations</span>.
+                        <span className="text-slate-900 dark:text-white mx-1 font-semibold">clean code</span>
+                        and <span className="text-slate-900 dark:text-white mx-1 font-semibold">intelligent AI integrations</span>.
                     </motion.p>
 
                     <motion.div
@@ -68,18 +68,18 @@ export default function Hero() {
                     >
                         <a
                             href="#projects"
-                            className="px-12 py-5 bg-slate-950 dark:bg-white text-white dark:text-slate-950 font-black uppercase tracking-widest text-xs rounded-2xl shadow-2xl hover:scale-105 transition-all flex items-center gap-3 group"
+                            className="px-8 py-4 bg-slate-950 dark:bg-white text-white dark:text-slate-950 font-bold uppercase tracking-widest text-[10px] rounded-2xl shadow-xl hover:shadow-primary-500/20 hover:scale-105 transition-all flex items-center gap-3 group"
                         >
                             View Projects
-                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a
                             href={cvFile}
                             download="Zahoor_Khan_Resume.pdf"
-                            className="px-12 py-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex items-center gap-3 shadow-sm hover:scale-105"
+                            className="px-8 py-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-bold uppercase tracking-widest text-[10px] rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex items-center gap-3 shadow-sm hover:scale-105"
                         >
                             Resume
-                            <Download size={18} />
+                            <Download size={16} />
                         </a>
                     </motion.div>
 

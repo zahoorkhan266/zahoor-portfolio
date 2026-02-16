@@ -7,6 +7,10 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
         primary: {
           50: '#f0f9ff',
@@ -21,6 +25,13 @@ export default {
           900: '#0c4a6e',
           950: '#082f49',
         },
+        slate: {
+          950: '#020617',
+        }
+      },
+      letterSpacing: {
+        tightest: '-.075em',
+        tighter: '-.05em',
       },
     },
   },

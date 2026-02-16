@@ -11,10 +11,10 @@ export default function Experience() {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-7xl font-black mb-8 tracking-tighter leading-[0.9]"
+                        className="text-6xl md:text-8xl font-black mb-10 tracking-tightest leading-[0.85] font-display"
                     >
-                        Professional <br />
-                        <span className="text-primary-600 dark:text-primary-400">Journey</span>
+                        Work <br />
+                        <span className="text-primary-600 dark:text-primary-400">History</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export default function Experience() {
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
-                                    className="relative pl-12 border-l border-slate-100 dark:border-slate-800"
+                                    className="relative group bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/50 p-10 rounded-[2.5rem] hover:ring-2 ring-primary-500/20 transition-all duration-500 shadow-sm hover:shadow-xl"
                                 >
                                     <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-blue-600" />
                                     <h4 className="text-3xl font-black mb-4 tracking-tight">{edu.degree}</h4>
