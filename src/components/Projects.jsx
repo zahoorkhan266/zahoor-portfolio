@@ -9,10 +9,11 @@ export default function Projects() {
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
                     <div className="max-w-2xl">
                         <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="text-6xl md:text-8xl font-black mb-10 tracking-tightest leading-[0.85] font-display"
+                            transition={{ duration: 0.8 }}
+                            className="text-5xl md:text-7xl font-black mb-10 tracking-tightest leading-[0.9] font-display"
                         >
                             Selected <br />
                             <span className="text-primary-600 dark:text-primary-400">Projects</span>
@@ -40,14 +41,28 @@ export default function Projects() {
                     </motion.a>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={{
+                        hidden: {},
+                        visible: {
+                            transition: {
+                                staggerChildren: 0.1
+                            }
+                        }
+                    }}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-12"
+                >
                     {resumeData.projects.map((project, idx) => (
                         <motion.div
                             key={project.title}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.1, duration: 0.7 }}
+                            variants={{
+                                hidden: { opacity: 0, y: 30, scale: 0.95 },
+                                visible: { opacity: 1, y: 0, scale: 1 }
+                            }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
                             className="group relative bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/50 rounded-[2.5rem] overflow-hidden hover:border-primary-500/30 transition-all duration-700 flex flex-col h-full shadow-sm hover:shadow-2xl hover:-translate-y-2"
                         >
                             {/* Visual Header */}
@@ -75,7 +90,7 @@ export default function Projects() {
                                         </span>
                                     ))}
                                 </div>
-                                <h3 className="text-4xl font-black mb-6 group-hover:text-primary-600 transition-colors tracking-tightest font-display">
+                                <h3 className="text-3xl font-black mb-6 group-hover:text-primary-600 transition-colors tracking-tightest font-display">
                                     {project.title}
                                 </h3>
                                 {project.role && (
@@ -83,7 +98,7 @@ export default function Projects() {
                                         {project.role}
                                     </p>
                                 )}
-                                <p className="text-lg text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3 mb-10 flex-grow font-medium">
+                                <p className="text-base text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3 mb-10 flex-grow font-medium">
                                     {project.description}
                                 </p>
                                 <div className="flex items-center gap-6 mt-auto">
@@ -96,7 +111,7 @@ export default function Projects() {
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     )

@@ -8,10 +8,11 @@ export default function Experience() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-left mb-24">
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="text-6xl md:text-8xl font-black mb-10 tracking-tightest leading-[0.85] font-display"
+                        transition={{ duration: 0.8 }}
+                        className="text-5xl md:text-7xl font-black mb-10 tracking-tightest leading-[0.9] font-display"
                     >
                         Work <br />
                         <span className="text-primary-600 dark:text-primary-400">History</span>
@@ -53,7 +54,7 @@ export default function Experience() {
                                     <span className="flex items-center gap-2 text-slate-300 dark:text-slate-600 tracking-[0.2em]">{exp.location}</span>
                                 </div>
 
-                                <p className="text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium max-w-2xl">
+                                <p className="text-base md:text-lg text-slate-500 dark:text-slate-400 leading-relaxed font-medium max-w-2xl">
                                     {exp.description}
                                 </p>
                             </motion.div>

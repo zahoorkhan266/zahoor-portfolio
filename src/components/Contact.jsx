@@ -33,18 +33,25 @@ export default function Contact() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
                     <div>
                         <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="text-6xl md:text-8xl font-black mb-10 tracking-tightest leading-[0.85] font-display"
+                            transition={{ duration: 0.8 }}
+                            className="text-5xl md:text-7xl font-black mb-10 tracking-tightest leading-[0.9] font-display"
                         >
                             Let's <br />
                             <span className="text-primary-600 dark:text-primary-400">Connect</span>
                         </motion.h2>
-                        <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 font-medium leading-relaxed">
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 font-medium leading-relaxed"
+                        >
                             I'm available for full-time roles and high-impact freelance projects.
                             Let's discuss how my expertise can help your vision come to life.
-                        </p>
+                        </motion.p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {contactInfo.map((info, index) => (

@@ -17,20 +17,27 @@ export default function About() {
                         transition={{ duration: 0.8 }}
                         className="space-y-10"
                     >
-                        <div className="space-y-6">
-                            <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]">
-                                Building <br />
-                                <span className="text-primary-600 dark:text-primary-400">Better Digital</span> <br />
-                                Experiences
-                            </h2>
-                            <div className="h-1 w-24 bg-primary-600 rounded-full" />
-                        </div>
+                        <motion.h2
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="text-5xl md:text-7xl font-black mb-10 tracking-tightest leading-[0.9] font-display"
+                        >
+                            About <br />
+                            <span className="text-primary-600 dark:text-primary-400">Me</span>
+                        </motion.h2>
 
-                        <p className="text-xl text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
-                            I'm a MERN stack developer with a degree in Computer Science.
-                            I focus on writing clean, efficient code to build tools that solve real problems.
-                        </p>
-
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                            className="text-lg md:text-xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-2xl"
+                        >
+                            I'm a full-stack developer dedicated to building high-performance
+                            digital products that solve real problems.
+                        </motion.p>
                         <div className="grid grid-cols-2 gap-12 py-10 border-y border-slate-50 dark:border-slate-900">
                             <div>
                                 <h4 className="text-slate-900 dark:text-white font-black text-4xl mb-2 tracking-tight">3.78</h4>
