@@ -2,7 +2,7 @@ export const resumeData = {
     name: "Zahoor Khan",
     role: "MERN Stack Developer",
     email: "zahoorshinwari5371@gmail.com",
-    phone: "+923359194083",
+    phone: "+923359194063",
     location: "Pakistan",
     education: [
         {

@@ -28,16 +28,16 @@ export default function Contact() {
     ]
 
     return (
-        <section id="contact" className="py-24 md:py-40 bg-white dark:bg-slate-950">
+        <section id="contact" className="py-20 md:py-32 bg-white dark:bg-slate-950">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     <div>
                         <motion.h2
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="text-5xl md:text-7xl font-black mb-10 tracking-tightest leading-[0.9] font-display"
+                            className="text-5xl md:text-7xl font-black mb-8 tracking-tightest leading-[0.85] font-display"
                         >
                             Let's <br />
                             <span className="text-primary-600 dark:text-primary-400">Connect</span>
@@ -47,13 +47,12 @@ export default function Contact() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 font-medium leading-relaxed"
+                            className="text-lg md:text-xl text-slate-500 dark:text-slate-400 mb-12 font-medium leading-relaxed"
                         >
                             I'm available for full-time roles and high-impact freelance projects.
-                            Let's discuss how my expertise can help your vision come to life.
                         </motion.p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
                             {contactInfo.map((info, index) => (
                                 <motion.div
                                     key={index}
@@ -63,30 +62,28 @@ export default function Contact() {
                                     transition={{ delay: index * 0.1 }}
                                 >
                                     {info.href ? (
-                                        <a href={info.href} className="block p-10 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/50 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 group">
-                                            <div className="flex items-center gap-6 mb-8">
-                                                <div className={`w-14 h-14 rounded-2xl bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center ${info.color} group-hover:scale-110 transition-transform`}>
+                                        <a href={info.href} className="flex flex-col justify-between p-5 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-100 dark:border-slate-800/50 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 group border-transparent hover:border-primary-500/20 h-full min-h-[140px]">
+                                            <div className="flex items-center gap-4">
+                                                <div className={`w-10 h-10 rounded-xl bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 flex-shrink-0 flex items-center justify-center ${info.color} group-hover:scale-110 transition-transform shadow-sm`}>
                                                     {info.icon}
                                                 </div>
-                                                <div>
-                                                    <p className="text-[11px] font-black uppercase tracking-widest text-slate-400 mb-1">{info.label}</p>
-                                                    <p className="text-lg font-bold text-slate-900 dark:text-white truncate">{info.value}</p>
+                                                <div className="min-w-0">
+                                                    <p className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 mb-0.5">{info.label}</p>
+                                                    <p className="text-xs md:text-sm font-black text-slate-900 dark:text-white break-all tracking-tight leading-tight">{info.value}</p>
                                                 </div>
                                             </div>
-                                            <div className="flex justify-end">
-                                                <ArrowUpRight className="text-slate-300 opacity-0 group-hover:opacity-100 transition-opacity" size={20} />
+                                            <div className="flex justify-end mt-2">
+                                                <ArrowUpRight className="text-slate-300 opacity-0 group-hover:opacity-100 transition-all duration-500" size={16} />
                                             </div>
                                         </a>
                                     ) : (
-                                        <div className="p-10 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/50 rounded-[2.5rem] shadow-sm">
-                                            <div className="flex items-center gap-6 mb-8">
-                                                <div className={`w-14 h-14 rounded-2xl bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center ${info.color}`}>
-                                                    {info.icon}
-                                                </div>
-                                                <div>
-                                                    <p className="text-[11px] font-black uppercase tracking-widest text-slate-400 mb-1">{info.label}</p>
-                                                    <p className="text-lg font-bold text-slate-900 dark:text-white truncate">{info.value}</p>
-                                                </div>
+                                        <div className="flex items-center gap-4 p-5 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-100 dark:border-slate-800/50 rounded-2xl shadow-sm h-full min-h-[140px]">
+                                            <div className={`w-10 h-10 rounded-xl bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 flex-shrink-0 flex items-center justify-center ${info.color}`}>
+                                                {info.icon}
+                                            </div>
+                                            <div className="min-w-0">
+                                                <p className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 mb-0.5">{info.label}</p>
+                                                <p className="text-xs md:text-sm font-black text-slate-900 dark:text-white break-all tracking-tight leading-tight">{info.value}</p>
                                             </div>
                                         </div>
                                     )}
@@ -96,39 +93,39 @@ export default function Contact() {
                     </div>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="bg-slate-50 dark:bg-slate-900/50 p-10 md:p-14 rounded-[3rem] border border-slate-200 dark:border-slate-800 shadow-2xl dark:shadow-primary-500/5"
+                        transition={{ delay: 0.2, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                        className="bg-white dark:bg-slate-900 p-8 md:p-12 rounded-3xl border border-slate-200/50 dark:border-slate-800/50 shadow-2xl dark:shadow-primary-500/5"
                     >
                         <form
-                            className="space-y-8"
+                            className="space-y-6"
                             onSubmit={(e) => {
                                 e.preventDefault();
                                 const formData = new FormData(e.target);
                                 const name = formData.get('name');
                                 const email = formData.get('email');
                                 const message = formData.get('message');
-                                window.location.href = `mailto:${resumeData.email}?subject=Contact from ${name}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+                                window.location.href = `mailto:${resumeData.email}?subject=Project inquiry from ${name}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
                             }}
                         >
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div className="space-y-3">
-                                    <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Name</label>
-                                    <input name="name" required type="text" className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 outline-none transition-all font-medium" placeholder="John Doe" />
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">Identity</label>
+                                    <input name="name" required type="text" className="w-full px-6 py-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 outline-none transition-all font-bold placeholder:text-slate-300 dark:placeholder:text-slate-700 text-sm" placeholder="Your Name" />
                                 </div>
-                                <div className="space-y-3">
-                                    <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Email</label>
-                                    <input name="email" required type="email" className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 outline-none transition-all font-medium" placeholder="john@example.com" />
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">Email</label>
+                                    <input name="email" required type="email" className="w-full px-6 py-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 outline-none transition-all font-bold placeholder:text-slate-300 dark:placeholder:text-slate-700 text-sm" placeholder="your@email.com" />
                                 </div>
                             </div>
-                            <div className="space-y-3">
-                                <label className="text-xs font-black uppercase tracking-widest text-slate-500 ml-1">Message</label>
-                                <textarea name="message" required rows="4" className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 outline-none transition-all resize-none font-medium" placeholder="Briefly describe your project or opportunity..."></textarea>
+                            <div className="space-y-2">
+                                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">Communication</label>
+                                <textarea name="message" required rows="4" className="w-full px-6 py-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 focus:ring-4 focus:ring-primary-500/10 focus:border-primary-500 outline-none transition-all resize-none font-bold placeholder:text-slate-300 dark:placeholder:text-slate-700 text-sm" placeholder="How can I help you?"></textarea>
                             </div>
-                            <button type="submit" className="w-full py-5 bg-primary-600 hover:bg-primary-700 text-white font-black text-sm uppercase tracking-[0.2em] rounded-2xl flex items-center justify-center gap-3 shadow-xl shadow-primary-500/20 transition-all hover:scale-[1.02] active:scale-95">
-                                Send Message <Send size={20} />
+                            <button type="submit" className="w-full py-5 bg-slate-950 dark:bg-primary-600 hover:bg-primary-600 dark:hover:bg-primary-500 text-white font-black text-[10px] uppercase tracking-[0.2em] rounded-xl flex items-center justify-center gap-3 transition-all duration-500 hover:scale-[1.01] active:scale-[0.99] shadow-xl">
+                                Transmit Message <Send size={18} />
                             </button>
                         </form>
                     </motion.div>

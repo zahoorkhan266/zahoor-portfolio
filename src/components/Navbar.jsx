@@ -22,16 +22,18 @@ export default function Navbar() {
     if (!mounted) return null
 
     return (
-        <nav className="fixed top-0 z-50 w-full border-b border-slate-200/50 dark:border-slate-800/50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl">
+        <nav className="fixed top-0 z-50 w-full border-b border-slate-200/50 dark:border-slate-800/20 bg-white/60 dark:bg-slate-950/60 backdrop-blur-2xl transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="flex-shrink-0 font-display font-black text-2xl tracking-tightest group cursor-pointer"
+                        className="flex-shrink-0 font-display font-black text-2xl tracking-tighter group cursor-pointer flex items-center gap-2"
                     >
-                        <span className="text-primary-600">Z</span>K
-                        <div className="h-0.5 w-0 group-hover:w-full bg-primary-500 transition-all duration-300" />
+                        <div className="w-10 h-10 rounded-xl bg-primary-600 flex items-center justify-center text-white text-xl shadow-lg shadow-primary-500/20 group-hover:rotate-12 transition-transform">
+                            Z
+                        </div>
+                        <span className="hidden sm:inline-block">KHAN</span>
                     </motion.div>
 
                     {/* Desktop Nav */}
@@ -43,10 +45,10 @@ export default function Navbar() {
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
-                                className="text-[11px] font-black uppercase tracking-widest text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors relative group"
+                                className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors relative group py-2"
                             >
                                 {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all group-hover:w-full" />
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-500 group-hover:w-full" />
                             </motion.a>
                         ))}
                         <button

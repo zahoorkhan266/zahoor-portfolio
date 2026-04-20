@@ -5,11 +5,12 @@ import cvFile from "../assets/Zahoor's Resume.pdf"
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden pt-32 pb-24 md:pt-48 md:pb-40">
-            {/* Soft, organic background glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
-                <div className="absolute top-[-5%] left-[-10%] w-[70%] h-[70%] bg-primary-500/5 blur-[120px] rounded-full mix-blend-soft-light" />
-                <div className="absolute bottom-[-5%] right-[-10%] w-[70%] h-[70%] bg-blue-500/5 blur-[120px] rounded-full mix-blend-soft-light" />
+        <section className="relative overflow-hidden pt-24 pb-16 md:pt-36 md:pb-28">
+            {/* Sophisticated background depth */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none overflow-hidden">
+                <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-primary-500/10 blur-[150px] rounded-full mix-blend-soft-light" />
+                <div className="absolute bottom-[0%] right-[-5%] w-[50%] h-[50%] bg-blue-400/10 blur-[120px] rounded-full mix-blend-soft-light" />
+                <div className="absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-indigo-500/5 blur-[100px] rounded-full mix-blend-soft-light" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,7 +34,7 @@ export default function Hero() {
                             hidden: { opacity: 0, y: 20 },
                             visible: { opacity: 1, y: 0 }
                         }}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 mb-10 text-[10px] font-black tracking-[0.2em] uppercase bg-slate-50 dark:bg-slate-900 text-slate-400 border border-slate-100 dark:border-slate-800 rounded-full"
+                        className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-[10px] font-black tracking-[0.2em] uppercase bg-slate-50 dark:bg-slate-900 text-slate-400 border border-slate-100 dark:border-slate-800 rounded-full"
                     >
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
@@ -48,7 +49,7 @@ export default function Hero() {
                             visible: { opacity: 1, y: 0, scale: 1 }
                         }}
                         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                        className="text-6xl md:text-8xl lg:text-[7rem] font-black tracking-tightest mb-8 bg-clip-text text-transparent bg-gradient-to-b from-slate-950 to-slate-700 dark:from-white dark:to-slate-500 leading-[0.9] font-display"
+                        className="text-5xl md:text-8xl lg:text-[7.5rem] font-black tracking-tightest mb-8 bg-clip-text text-transparent bg-gradient-to-br from-slate-950 via-slate-800 to-slate-600 dark:from-white dark:via-slate-200 dark:to-slate-500 leading-[0.85] font-display"
                     >
                         {resumeData.name}
                     </motion.h1>
@@ -80,22 +81,22 @@ export default function Hero() {
                             hidden: { opacity: 0, scale: 0.9 },
                             visible: { opacity: 1, scale: 1 }
                         }}
-                        className="flex flex-wrap justify-center gap-6"
+                        className="flex flex-wrap justify-center gap-5 mt-4"
                     >
                         <a
                             href="#projects"
-                            className="px-8 py-4 bg-slate-950 dark:bg-white text-white dark:text-slate-950 font-bold uppercase tracking-widest text-[10px] rounded-2xl shadow-xl hover:shadow-primary-500/20 hover:scale-105 transition-all flex items-center gap-3 group"
+                            className="px-10 py-5 bg-slate-950 dark:bg-white text-white dark:text-slate-950 font-bold uppercase tracking-widest text-[11px] rounded-[1.25rem] shadow-2xl shadow-primary-500/10 hover:shadow-primary-500/30 hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 group"
                         >
-                            View Projects
-                            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                            Explore Work
+                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a
                             href={cvFile}
                             download="Zahoor_Khan_Resume.pdf"
-                            className="px-8 py-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 font-bold uppercase tracking-widest text-[10px] rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex items-center gap-3 shadow-sm hover:scale-105"
+                            className="px-10 py-5 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-200 dark:border-slate-800 font-bold uppercase tracking-widest text-[11px] rounded-[1.25rem] hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 flex items-center gap-3 shadow-sm hover:-translate-y-1"
                         >
                             Resume
-                            <Download size={16} />
+                            <Download size={18} />
                         </a>
                     </motion.div>
 
