@@ -15,7 +15,7 @@ export default function Contact() {
             label: "WhatsApp Me",
             value: resumeData.phone,
             icon: <Phone size={24} />,
-            href: `https://wa.me/923359194063?text=How%20can%20I%20help%20you%3F`,
+            href: `https://wa.me/923359194063?text=Hi%20Zahoor%2C%20I%27d%20like%20to%20discuss%20building%20an%20AI-powered%20solution%20and%20modern%20web%20application%20for%20my%20business.%20Are%20you%20available%3F`,
             color: "text-blue-600 dark:text-blue-400"
         },
         {
