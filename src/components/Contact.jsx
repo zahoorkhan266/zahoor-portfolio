@@ -12,10 +12,10 @@ export default function Contact() {
             color: "text-primary-600 dark:text-primary-400"
         },
         {
-            label: "Call Me",
+            label: "WhatsApp Me",
             value: resumeData.phone,
             icon: <Phone size={24} />,
-            href: `tel:${resumeData.phone}`,
+            href: `https://wa.me/923359194063?text=How%20can%20I%20help%20you%3F`,
             color: "text-blue-600 dark:text-blue-400"
         },
         {
