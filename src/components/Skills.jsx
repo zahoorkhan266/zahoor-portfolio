@@ -19,7 +19,7 @@ const skillCategories = [
         items: resumeData.skills.databases,
     },
     {
-        title: "Platform",
+        title: "Tools & APIs",
         icon: <Wrench className="text-orange-500" />,
         items: resumeData.skills.tools,
     }
@@ -35,7 +35,7 @@ export default function Skills() {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="text-5xl md:text-7xl font-black mb-8 tracking-tightest leading-[0.85] font-display"
+                        className="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight font-display"
                     >
                         Tool <br />
                         <span className="text-primary-600 dark:text-primary-400">Stack</span>
@@ -79,14 +79,14 @@ export default function Skills() {
                                 <div className="w-14 h-14 rounded-2xl bg-white dark:bg-slate-950 border border-slate-100 dark:border-slate-800 flex items-center justify-center mb-10 group-hover:scale-110 transition-all duration-500 shadow-xl group-hover:shadow-primary-500/10">
                                     {category.icon}
                                 </div>
-                                <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover:text-primary-500 transition-colors mb-6">
+                                <h4 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 group-hover:text-primary-500 transition-colors mb-4">
                                     {category.title}
                                 </h4>
                                 <div className="flex flex-wrap gap-2.5">
                                     {category.items.map((skill) => (
                                         <div
                                             key={skill}
-                                            className="px-4 py-2 text-[9px] font-black uppercase tracking-widest bg-slate-50 dark:bg-slate-800/80 text-slate-500 dark:text-slate-400 rounded-xl border border-slate-100 dark:border-slate-800 transition-colors group-hover:border-primary-500/20 group-hover:text-slate-900 dark:group-hover:text-white"
+                                            className="px-3 py-1.5 text-[10px] font-medium tracking-normal bg-slate-50 dark:bg-slate-800/85 text-slate-500 dark:text-slate-400 rounded-lg border border-slate-100 dark:border-slate-800/80 transition-colors group-hover:border-primary-500/25 group-hover:text-slate-900 dark:group-hover:text-white"
                                         >
                                             {skill}
                                         </div>

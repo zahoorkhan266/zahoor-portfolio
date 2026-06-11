@@ -2,6 +2,7 @@ import { ThemeProvider } from "./components/theme-provider"
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import About from "./components/About"
+import Services from "./components/Services"
 import Skills from "./components/Skills"
 import Projects from "./components/Projects"
 import Experience from "./components/Experience"
@@ -16,6 +17,7 @@ function App() {
         <main>
           <Hero />
           <About />
+          <Services />
           <Skills />
           <Projects />
           <Experience />

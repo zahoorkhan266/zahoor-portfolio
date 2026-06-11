@@ -6,6 +6,7 @@ import { cn } from "../lib/utils"
 
 const navLinks = [
     { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
@@ -28,7 +29,7 @@ export default function Navbar() {
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="flex-shrink-0 font-display font-black text-2xl tracking-tighter group cursor-pointer flex items-center gap-2"
+                        className="flex-shrink-0 font-display font-bold text-xl tracking-tight group cursor-pointer flex items-center gap-2"
                     >
                         <div className="w-10 h-10 rounded-xl bg-primary-600 flex items-center justify-center text-white text-xl shadow-lg shadow-primary-500/20 group-hover:rotate-12 transition-transform">
                             Z
@@ -45,7 +46,7 @@ export default function Navbar() {
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
-                                className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors relative group py-2"
+                                className="text-[11px] font-bold uppercase tracking-wider text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors relative group py-2"
                             >
                                 {link.name}
                                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-500 group-hover:w-full" />

@@ -13,7 +13,7 @@ export default function Projects() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="text-5xl md:text-7xl font-black mb-8 tracking-tightest leading-[0.85] font-display"
+                            className="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight font-display"
                         >
                             Selected <br />
                             <span className="text-primary-600 dark:text-primary-400">Projects</span>
@@ -35,7 +35,7 @@ export default function Projects() {
                         viewport={{ once: true }}
                         href={resumeData.socials.github}
                         target="_blank"
-                        className="inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-primary-600 transition-colors group"
+                        className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-400 hover:text-primary-600 transition-colors group"
                     >
                         GitHub Archive <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </motion.a>
@@ -88,16 +88,16 @@ export default function Projects() {
                             <div className="px-2 flex flex-col flex-grow">
                                 <div className="flex flex-wrap gap-2 mb-6">
                                     {project.tech.map((t) => (
-                                        <span key={t} className="px-3 py-1 text-[8px] font-black uppercase tracking-[0.2em] text-slate-400 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
+                                        <span key={t} className="px-2.5 py-1 text-[9px] font-medium tracking-normal text-slate-400 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
                                             {t}
                                         </span>
                                     ))}
                                 </div>
-                                <h3 className="text-3xl font-black mb-4 group-hover:text-primary-600 transition-colors tracking-tight font-display uppercase italic italic-none">
+                                <h3 className="text-2xl font-bold mb-2 group-hover:text-primary-600 transition-colors tracking-tight font-display">
                                     {project.title}
                                 </h3>
                                 {project.role && (
-                                    <p className="text-[10px] font-black text-primary-500 mb-6 uppercase tracking-[0.3em]">
+                                    <p className="text-xs font-semibold text-primary-500 mb-4 uppercase tracking-[0.1em]">
                                         // {project.role}
                                     </p>
                                 )}
@@ -106,7 +106,7 @@ export default function Projects() {
                                 </p>
                                 <div className="flex items-center gap-6 mt-auto">
                                     {project.link && (
-                                        <a href={project.link} className="inline-flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.3em] text-slate-900 dark:text-white hover:text-primary-600 transition-all group/link">
+                                        <a href={project.link} className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-slate-900 dark:text-white hover:text-primary-600 transition-all group/link">
                                             Launch Alpha <ArrowUpRight size={18} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
                                         </a>
                                     )}

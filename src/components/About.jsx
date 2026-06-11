@@ -22,7 +22,7 @@ export default function About() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="text-5xl md:text-7xl font-black mb-8 tracking-tightest leading-[0.85] font-display"
+                            className="text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-tight font-display"
                         >
                             The <br />
                             <span className="text-primary-600 dark:text-primary-400">Story</span>
@@ -33,20 +33,23 @@ export default function About() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-2xl italic italic-none"
+                            className="text-lg md:text-xl text-slate-500 dark:text-slate-400 font-normal leading-relaxed max-w-2xl"
                         >
-                            "I'm a full-stack architect dedicated to building high-performance
-                            digital systems that bridge the gap between human needs and intelligent technology."
+                            "I am a developer who builds high-performance web systems, deploys and manages cloud servers on AWS EC2, crafts clean logos, and constructs intelligent AI agents tailored to specific client goals."
                         </motion.p>
                         
-                        <div className="grid grid-cols-2 gap-12 py-12 border-y border-slate-100 dark:border-slate-900/50">
+                        <div className="grid grid-cols-3 gap-8 py-12 border-y border-slate-100 dark:border-slate-900/50">
                             <div>
-                                <h4 className="text-slate-900 dark:text-white font-black text-5xl mb-2 tracking-tight">3.78</h4>
-                                <p className="text-[10px] font-black text-primary-500 uppercase tracking-[0.3em]">ICU CGPA</p>
+                                <h4 className="text-slate-900 dark:text-white font-bold text-4xl mb-1 tracking-tight">15+</h4>
+                                <p className="text-[10px] font-semibold text-primary-500 uppercase tracking-[0.2em]">Ideas Realized</p>
                             </div>
                             <div>
-                                <h4 className="text-slate-900 dark:text-white font-black text-5xl mb-2 tracking-tight">V3+</h4>
-                                <p className="text-[10px] font-black text-primary-500 uppercase tracking-[0.3em]">Major Shipped</p>
+                                <h4 className="text-slate-900 dark:text-white font-bold text-4xl mb-1 tracking-tight">10+</h4>
+                                <p className="text-[10px] font-semibold text-primary-500 uppercase tracking-[0.2em]">SaaS Shipped</p>
+                            </div>
+                            <div>
+                                <h4 className="text-slate-900 dark:text-white font-bold text-4xl mb-1 tracking-tight">V3+</h4>
+                                <p className="text-[10px] font-semibold text-primary-500 uppercase tracking-[0.2em]">Major Shipped</p>
                             </div>
                         </div>
 
@@ -60,7 +63,7 @@ export default function About() {
                                     href={cert.file}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-5 px-8 py-6 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-100 dark:border-slate-800 rounded-3xl font-black text-[10px] uppercase tracking-widest hover:border-primary-500/30 transition-all shadow-sm hover:-translate-y-1 group"
+                                    className="inline-flex items-center gap-4 px-6 py-4 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border border-slate-100 dark:border-slate-800 rounded-2xl font-bold text-[10px] uppercase tracking-wider hover:border-primary-500/30 transition-all shadow-sm hover:-translate-y-1 group"
                                 >
                                     <div className="w-12 h-12 rounded-xl bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center text-primary-600 group-hover:scale-110 transition-transform">
                                         <Award size={24} />
