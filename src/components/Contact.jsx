@@ -1,8 +1,10 @@
 import { motion } from "framer-motion"
 import { resumeData } from "../data/resume"
 import { Mail, Phone, MapPin, Send, ArrowUpRight } from "lucide-react"
+import { useState } from "react"
 
 export default function Contact() {
+    const [contactMethod, setContactMethod] = useState('email')
     const contactInfo = [
         {
             label: "Email Me",
@@ -107,9 +109,28 @@ export default function Contact() {
                                 const name = formData.get('name');
                                 const email = formData.get('email');
                                 const message = formData.get('message');
-                                window.location.href = `mailto:${resumeData.email}?subject=Project inquiry from ${name}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+
+                                if (contactMethod === 'email') {
+                                    window.location.href = `mailto:${resumeData.email}?subject=Project inquiry from ${name}&body=${encodeURIComponent(`From: ${name} (${email})\n\n${message}`)}`;
+                                } else {
+                                    const whatsappMessage = `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`;
+                                    window.location.href = `https://wa.me/923359194063?text=${encodeURIComponent(whatsappMessage)}`;
+                                }
                             }}
                         >
+                            <div className="space-y-4 mb-6">
+                                <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Send via</label>
+                                <div className="flex gap-4">
+                                    <label className="flex items-center gap-3 px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer transition-all" style={{backgroundColor: contactMethod === 'email' ? 'rgba(var(--primary-500), 0.1)' : 'transparent', borderColor: contactMethod === 'email' ? 'var(--primary-500)' : undefined}}>
+                                        <input type="radio" name="method" value="email" checked={contactMethod === 'email'} onChange={() => setContactMethod('email')} className="w-4 h-4 cursor-pointer" />
+                                        <span className="text-sm font-semibold text-slate-900 dark:text-white">Email</span>
+                                    </label>
+                                    <label className="flex items-center gap-3 px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer transition-all" style={{backgroundColor: contactMethod === 'whatsapp' ? 'rgba(var(--primary-500), 0.1)' : 'transparent', borderColor: contactMethod === 'whatsapp' ? 'var(--primary-500)' : undefined}}>
+                                        <input type="radio" name="method" value="whatsapp" checked={contactMethod === 'whatsapp'} onChange={() => setContactMethod('whatsapp')} className="w-4 h-4 cursor-pointer" />
+                                        <span className="text-sm font-semibold text-slate-900 dark:text-white">WhatsApp</span>
+                                    </label>
+                                </div>
+                            </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 ml-1">Identity</label>
