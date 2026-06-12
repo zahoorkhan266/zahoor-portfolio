@@ -50,6 +50,11 @@ export const resumeData = {
             title: "AWS Cloud & Deployment",
             description: "Secure application hosting and deployment on AWS EC2, setting up web servers (Nginx/Apache), SSL configurations, and managing cloud infrastructure for optimal uptime.",
             icon: "Cloud"
+        },
+        {
+            title: "WordPress Development",
+            description: "Professional WordPress site creation with custom theme development, advanced plugin development, and Elementor page builder expertise. From business websites to e-commerce platforms with full customization.",
+            icon: "Globe"
         }
     ],
     skills: {
@@ -93,4 +98,4 @@ export const resumeData = {
         linkedin: "https://www.linkedin.com/in/zakhori-shinwari-373b14391?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     }
 };
-// 4 services: AI Chatbots, Logo Design, Full-Stack, AWS Cloud
+// 5 services: AI Chatbots, Logo Design, Full-Stack, AWS Cloud, WordPress Development
